@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Day 1 - Software Development Life Cycle</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen text-gray-800">
+
+<!-- ✅ NAVBAR -->
+<nav class="bg-white shadow fixed w-full z-50">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+    <h1 class="text-xl font-bold text-indigo-600">Day 1 — SDLC</h1>
+    <a href="../index.php" class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
+      ← Back
+    </a>
+      <a href="quiz.php" class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
+       Quiz
+    </a>
+  </div>
+</nav>
+
+<!-- ✅ HERO SECTION -->
+<section class="pt-32 pb-20 text-center px-6">
+  <h1 class="text-4xl md:text-5xl font-extrabold mb-6 text-indigo-700 tracking-wide">
+    SOFTWARE DEVELOPMENT LIFE CYCLE
+  </h1>
+
+  <p class="max-w-4xl mx-auto text-lg text-gray-600 leading-relaxed">
+    Software Development Life Cycle (SDLC) is a structured process used to design, develop, and test high-quality software.  
+    It defines the complete step-by-step procedure to build maintainable systems that meet user requirements.
+  </p>
+</section>
+
+<!-- ✅ WHAT IS SDLC -->
+<section class="max-w-6xl mx-auto px-6 mb-20">
+  <div class="bg-white rounded-2xl shadow-lg p-10 hover:shadow-xl transition">
+    <h2 class="text-3xl font-bold mb-4 text-indigo-600">What is SDLC?</h2>
+
+    <p class="text-gray-700 leading-relaxed text-lg">
+      SDLC is a methodology that guides the entire software development process from idea to deployment and maintenance.  
+      Its main goal is to deliver **high-quality, reliable, and user-friendly software** efficiently.
+    </p>
+  </div>
+</section>
+
+<!-- ✅ STAGES HEADER -->
+<section class="text-center mb-14">
+  <h2 class="text-4xl font-bold text-indigo-700">
+    Stages of the Software Development Life Cycle
+  </h2>
+</section>
+
+<!-- ✅ SDLC STAGES (INTERACTIVE CARDS) -->
+<section class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+  <!-- STAGE 1 -->
+  <div class="group bg-white p-8 rounded-2xl shadow hover:shadow-2xl transition transform hover:-translate-y-2">
+    <span class="text-sm font-semibold text-indigo-500">Stage 1</span>
+    <h3 class="text-2xl font-bold mt-2 mb-3">Requirement Gathering & Analysis</h3>
+    <p class="text-gray-600 leading-relaxed">
+      Developers, clients, and stakeholders discuss what the software should do. All user requirements are gathered and feasibility is analyzed.
+    </p>
+  </div>
+
+  <!-- STAGE 2 -->
+  <div class="group bg-white p-8 rounded-2xl shadow hover:shadow-2xl transition transform hover:-translate-y-2">
+    <span class="text-sm font-semibold text-indigo-500">Stage 2</span>
+    <h3 class="text-2xl font-bold mt-2 mb-3">System Design</h3>
+    <p class="text-gray-600 leading-relaxed">
+      System architecture, database design, UI layouts, and diagrams are planned before development begins.
+    </p>
+  </div>
+
+  <!-- STAGE 3 -->
+  <div class="group bg-white p-8 rounded-2xl shadow hover:shadow-2xl transition transform hover:-translate-y-2">
+    <span class="text-sm font-semibold text-indigo-500">Stage 3</span>
+    <h3 class="text-2xl font-bold mt-2 mb-3">Development & Coding</h3>
+    <p class="text-gray-600 leading-relaxed">
+      Programmers write the actual code based on approved designs to build the system.
+    </p>
+  </div>
+
+  <!-- STAGE 4 -->
+  <div class="group bg-white p-8 rounded-2xl shadow hover:shadow-2xl transition transform hover:-translate-y-2">
+    <span class="text-sm font-semibold text-indigo-500">Stage 4</span>
+    <h3 class="text-2xl font-bold mt-2 mb-3">Testing</h3>
+    <p class="text-gray-600 leading-relaxed">
+      The system is tested to identify bugs and ensure it meets all requirements.
+    </p>
+  </div>
+
+  <!-- STAGE 5 -->
+  <div class="group bg-white p-8 rounded-2xl shadow hover:shadow-2xl transition transform hover:-translate-y-2">
+    <span class="text-sm font-semibold text-indigo-500">Stage 5</span>
+    <h3 class="text-2xl font-bold mt-2 mb-3">Deployment</h3>
+    <p class="text-gray-600 leading-relaxed">
+      The software is released to users after final approval. It may be a full release or a beta launch.
+    </p>
+  </div>
+
+  <!-- STAGE 6 -->
+  <div class="group bg-white p-8 rounded-2xl shadow hover:shadow-2xl transition transform hover:-translate-y-2">
+    <span class="text-sm font-semibold text-indigo-500">Stage 6</span>
+    <h3 class="text-2xl font-bold mt-2 mb-3">Maintenance</h3>
+    <p class="text-gray-600 leading-relaxed">
+      Continuous updates, bug fixes, and improvements are performed to keep the system running smoothly.
+    </p>
+  </div>
+
+</section>
+
+<!-- ✅ THANK YOU SECTION -->
+<section class="mt-24 text-center">
+  <h2 class="text-4xl font-extrabold text-indigo-700 mb-4">THANK YOU</h2>
+  <p class="text-gray-600 text-lg">Day 1 — Software Development Life Cycle</p>
+</section>
+
+<!-- ✅ FOOTER -->
+<footer class="mt-20 pb-6 text-center text-gray-500 text-sm">
+  © <?= date("Y") ?> Daily Projects | Day 1 — SDLC
+</footer>
+
+</body>
+</html>

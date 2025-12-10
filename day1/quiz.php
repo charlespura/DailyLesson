@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SDLC Quiz</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen text-gray-800">
+
+<!-- ✅ NAVBAR -->
+<nav class="bg-white shadow fixed w-full z-50">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+    <h1 class="text-xl font-bold text-indigo-600">Day 1 — SDLC</h1>
+    <a href="../index.php" class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
+      ← Back
+    </a>
+      <a href="quiz.php" class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
+       Quiz
+    </a>
+  </div>
+</nav>
+<!-- ✅ QUIZ CONTAINER -->
+<div class="pt-32 max-w-4xl mx-auto px-6">
+  <h1 class="text-4xl font-extrabold text-center text-indigo-700 mb-10">
+    
+    SDLC QUIZ (1–10)
+  </h1>
+
+  <!-- QUIZ CONTAINER -->
+  <div id="quizBox" class="text-center">
+
+    <h2 id="question" class="text-3xl font-bold mb-8"></h2>
+
+    <div id="options" class="space-y-5 text-2xl"></div>
+
+    <button onclick="nextQuestion()"
+      class="mt-10 px-10 py-4 bg-indigo-600 text-white text-2xl rounded-xl hover:bg-indigo-700 transition">
+      Next →
+    </button>
+  </div>
+
+  <!-- PASSWORD BOX -->
+  <div id="passwordBox" class="hidden text-center">
+    <h2 class="text-3xl font-bold mb-6 text-indigo-700">Enter Password to Show Answers</h2>
+
+    <input id="password" type="password"
+      class="border-2 border-indigo-400 p-4 text-2xl rounded-lg text-center">
+
+    <br><br>
+
+    <button onclick="checkPassword()"
+      class="px-10 py-4 bg-green-600 text-white text-2xl rounded-xl hover:bg-green-700 transition">
+      Show Answers
+    </button>
+
+    <p id="error" class="text-red-600 mt-4 text-xl"></p>
+  </div>
+
+  <!-- ANSWER KEY -->
+  <div id="answerKey" class="hidden">
+    <h2 class="text-4xl font-bold mb-8 text-center text-indigo-700">✅ ANSWER KEY</h2>
+
+    <ul class="text-2xl space-y-4">
+      <li>1. What does SDLC stand for? → <b>B. Software Development Life Cycle</b></li>
+      <li>2. First stage of SDLC → <b>C. Requirement Gathering</b></li>
+      <li>3. Stage where planning is done → <b>B. System Design</b></li>
+      <li>4. Coding happens in → <b>D. Development</b></li>
+      <li>5. Bugs are found in → <b>B. Testing</b></li>
+      <li>6. Software is released in → <b>B. Deployment</b></li>
+      <li>7. Updates happen in → <b>A. Maintenance</b></li>
+      <li>8. SDLC is a → <b>C. Process</b></li>
+      <li>9. Users give requirements in → <b>D. Requirement Gathering</b></li>
+      <li>10. Final stage of SDLC → <b>C. Maintenance</b></li>
+    </ul>
+  </div>
+
+</div>
+
+<script>
+let current = 0;
+
+const questions = [
+  {
+    q: "1. What does SDLC stand for?",
+    o: ["A. Software Data Life Cycle", "B. Software Development Life Cycle", "C. System Data Life Cycle", "D. Software Design Life Cycle"]
+  },
+  {
+    q: "2. What is the first stage of SDLC?",
+    o: ["A. Testing", "B. Maintenance", "C. Requirement Gathering", "D. Deployment"]
+  },
+  {
+    q: "3. Which stage involves system planning?",
+    o: ["A. Development", "B. System Design", "C. Testing", "D. Deployment"]
+  },
+  {
+    q: "4. Where does coding happen?",
+    o: ["A. Design", "B. Testing", "C. Deployment", "D. Development"]
+  },
+  {
+    q: "5. Bugs are found in which stage?",
+    o: ["A. Deployment", "B. Testing", "C. Maintenance", "D. Design"]
+  },
+  {
+    q: "6. Software is delivered to users in?",
+    o: ["A. Testing", "B. Deployment", "C. Design", "D. Coding"]
+  },
+  {
+    q: "7. Updates and fixes are done in?",
+    o: ["A. Maintenance", "B. Development", "C. Design", "D. Testing"]
+  },
+  {
+    q: "8. SDLC is a type of?",
+    o: ["A. Device", "B. Software", "C. Process", "D. Language"]
+  },
+  {
+    q: "9. User requirements are collected in?",
+    o: ["A. Testing", "B. Design", "C. Deployment", "D. Requirement Gathering"]
+  },
+  {
+    q: "10. What is the last stage of SDLC?",
+    o: ["A. Testing", "B. Design", "C. Maintenance", "D. Development"]
+  }
+];
+
+function loadQuestion() {
+  document.getElementById("question").innerText = questions[current].q;
+
+  let optionsHTML = "";
+  questions[current].o.forEach(option => {
+    optionsHTML += `<div class="bg-indigo-100 p-4 rounded-xl">${option}</div>`;
+  });
+
+  document.getElementById("options").innerHTML = optionsHTML;
+}
+
+function nextQuestion() {
+  current++;
+
+  if (current < questions.length) {
+    loadQuestion();
+  } else {
+    document.getElementById("quizBox").classList.add("hidden");
+    document.getElementById("passwordBox").classList.remove("hidden");
+  }
+}
+
+function checkPassword() {
+  const pass = document.getElementById("password").value;
+
+  if (pass === "SDLC") {
+    document.getElementById("passwordBox").classList.add("hidden");
+    document.getElementById("answerKey").classList.remove("hidden");
+  } else {
+    document.getElementById("error").innerText = "❌ Incorrect Password!";
+  }
+}
+
+loadQuestion();
+</script>
+
+</body>
+</html>
